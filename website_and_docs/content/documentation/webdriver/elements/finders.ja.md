@@ -102,6 +102,17 @@ val fruit = fruits.findElement(By.className("tomatoes"))
 これらのインターフェースは明確に定義されており、責任の役割を1つだけ持つように努めています。
 {{% /pageinfo %}}
 
+{{% pageinfo color="info" %}}
+**XPath Locator**<br>
+When using an XPath locator in the second find element call, you
+need to employ a relative path expression. In this expression,
+a leading single dot is essential to indicate
+that the search context refers to the current node,
+which is the result of the first find element call.<br>
+For example, `".//p"` is a relative path expression, while `"//p"`
+will still search the entire DOM when used in the second find element call.
+{{% /pageinfo %}}
+
 ### 最適化されたロケーター
 
 ネストされたルックアップは、ブラウザに2つの別々のコマンドを発行する必要があるため、最も効果的なロケーション戦略ではない可能性があります。

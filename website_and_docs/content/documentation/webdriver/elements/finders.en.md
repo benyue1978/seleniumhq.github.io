@@ -109,6 +109,17 @@ driver implementation supports a given feature. These interfaces are clearly def
 to adhere to having only a single role of responsibility.
 {{% /pageinfo %}}
 
+{{% pageinfo color="info" %}}
+**XPath Locator**<br>
+When using an XPath locator in the second find element call, you
+need to employ a relative path expression. In this expression,
+a leading single dot is essential to indicate
+that the search context refers to the current node,
+which is the result of the first find element call.<br>
+For example, `".//p"` is a relative path expression, while `"//p"`
+will still search the entire DOM when used in the second find element call.
+{{% /pageinfo %}}
+
 ### Optimized locator
 
 A nested lookup might not be the most effective location strategy since it requires two

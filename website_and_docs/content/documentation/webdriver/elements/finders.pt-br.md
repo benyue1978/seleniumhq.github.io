@@ -105,6 +105,17 @@ implementação de driver suporta um recurso específico. Essas interfaces são 
 aderir a ter apenas um único papel de responsabilidade.
 {{% /pageinfo %}}
 
+{{% pageinfo color="info" %}}
+**XPath Locator**<br>
+When using an XPath locator in the second find element call, you
+need to employ a relative path expression. In this expression,
+a leading single dot is essential to indicate
+that the search context refers to the current node,
+which is the result of the first find element call.<br>
+For example, `".//p"` is a relative path expression, while `"//p"`
+will still search the entire DOM when used in the second find element call.
+{{% /pageinfo %}}
+
 ### Localizador otimizado
 Uma pesquisa aninhada pode não ser a estratégia de localização mais eficaz, pois requer dois
 comandos separados a serem emitidos para o navegador.
